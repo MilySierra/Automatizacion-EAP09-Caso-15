@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="as a user I want to sign up with my basic information to access the services available based on my profile" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-06-07T11:36:07.113Z" hostname="MILY" time="92.2">
+  <properties/>
+  <testcase name="successful customer registration" classname="as a user I want to sign up with my basic information to access the services available based on my profile" time="22.926"/>
+  <testcase name="successful provider registration" classname="as a user I want to sign up with my basic information to access the services available based on my profile" time="17.767"/>
+  <testcase name="registration with fields empty - exception" classname="as a user I want to sign up with my basic information to access the services available based on my profile" time="17.068"/>
+  <testcase name="registration with a password that does not meet the password policy - exception" classname="as a user I want to sign up with my basic information to access the services available based on my profile" time="17.084"/>
+  <testcase name="registration with an invalid email - exception" classname="as a user I want to sign up with my basic information to access the services available based on my profile" time="17.354"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+successful customer registration(as-a-user-i-want-to-sign-up-with-my-basic-information-to-access-the-services-available-based-on-my-profile;successful-customer-registration)
+--------------------------------------------------------------------------------
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--start-maximized, --test-type, --no-sandbox, --ignore-certificate-errors, \n                   --disa..., --disable-default-apps, --disable-extensions-file-a..., \n                   --inco..., --disable-infobars,--disabl..., --remote-allow-origins=*], extensions: []}}
+jun. 07, 2026 6:36:11 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find CDP implementation matching 148
+jun. 07, 2026 6:36:11 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 148.0.7778.217. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+successful customer registration
+----------------------------------------------------------------------?[0m
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+successful provider registration(as-a-user-i-want-to-sign-up-with-my-basic-information-to-access-the-services-available-based-on-my-profile;successful-provider-registration)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+successful provider registration
+----------------------------------------------------------------------?[0m
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+registration with fields empty - exception(as-a-user-i-want-to-sign-up-with-my-basic-information-to-access-the-services-available-based-on-my-profile;registration-with-fields-empty---exception)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+registration with fields empty - exception
+----------------------------------------------------------------------?[0m
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+registration with a password that does not meet the password policy - exception(as-a-user-i-want-to-sign-up-with-my-basic-information-to-access-the-services-available-based-on-my-profile;registration-with-a-password-that-does-not-meet-the-password-policy---exception)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+registration with a password that does not meet the password policy - exception
+----------------------------------------------------------------------?[0m
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+registration with an invalid email - exception(as-a-user-i-want-to-sign-up-with-my-basic-information-to-access-the-services-available-based-on-my-profile;registration-with-an-invalid-email---exception)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+registration with an invalid email - exception
+----------------------------------------------------------------------?[0m
+]]></system-err>
+</testsuite>
