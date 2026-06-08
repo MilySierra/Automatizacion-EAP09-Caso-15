@@ -1,0 +1,21 @@
+### Built classes and gradle cached files
+build/
+.gradle/
+history/
+build.gradle~
+
+### Target Serenity
+target/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+### Secrets ###
+.env
+.ai

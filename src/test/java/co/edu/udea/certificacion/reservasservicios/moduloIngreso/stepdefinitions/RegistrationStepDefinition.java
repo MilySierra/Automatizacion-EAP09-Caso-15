@@ -1,6 +1,5 @@
 package co.edu.udea.certificacion.reservasservicios.moduloIngreso.stepdefinitions;
 
-import co.edu.udea.certificacion.reservasservicios.moduloIngreso.interactions.ProviderRegistrationEnter;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.models.User;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.RegistrationEmailValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.RegistrationIncompleteValidation;

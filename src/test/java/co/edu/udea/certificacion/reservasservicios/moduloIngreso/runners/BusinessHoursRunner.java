@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/1_registration.feature"},
+        features = {"src/test/resources/features/business_hours.feature"},
         glue = "co.edu.udea.certificacion.reservasservicios.moduloIngreso.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class ReservaServiciosRunner {}
+public class BusinessHoursRunner {}
