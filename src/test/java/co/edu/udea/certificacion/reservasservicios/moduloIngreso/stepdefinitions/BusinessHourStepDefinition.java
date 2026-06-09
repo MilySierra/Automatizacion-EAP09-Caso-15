@@ -29,7 +29,7 @@ public class BusinessHourStepDefinition {
     @Given("I am an authenticated provider at the general business hours page")
     public void iAmAnAuthenticatedProviderAtTheGeneralBusinessHoursPage() {
         User provider = UserCreation.randomProvider();
-        user().attemptsTo(LoginThe.provider(provider));
+        user().attemptsTo(LoginThe.providerAtBussinesHours(provider));
     }
 
     @When("I define a valid set of business hours:")

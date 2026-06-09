@@ -24,7 +24,9 @@ public class ProviderSet implements Interaction{
         DayRow row = new DayRow(dayRow);
 
         WebElementFacade slider = row.activationSlider();
-        if (!slider.isSelected()){
+        WebElementFacade sliderCheck = row.activationSliderCheck();
+
+        if (!sliderCheck.isSelected()){
             slider.click();
         }
 
@@ -42,7 +44,7 @@ public class ProviderSet implements Interaction{
 
         Wait.waitSomeMills(500);
         button.click();
-        Wait.waitSomeMills(10000);
+        Wait.waitSomeMills(1000);
     }
 
     public static ProviderSet theBusinessHours(BusinessHours businessHours){

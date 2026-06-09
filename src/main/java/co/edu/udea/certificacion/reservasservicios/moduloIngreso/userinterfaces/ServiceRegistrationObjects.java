@@ -27,4 +27,9 @@ public class ServiceRegistrationObjects {
 
     public static final Target BUTTON_CREATE_AVAILABILITY = Target.the("Create availability button")
         .locatedBy("(//div[contains(@class,'card-panel')])[2]//button[contains(@class,'btn-secondary')]");
+
+    public static final Target DURATION_INPUT = Target.the(
+        "Duration of service for creation")
+        .locatedBy("//*[@id=\"root\"]/div/main/section/div/div[1]/div[1]/form/div[3]/div[1]/input");
+    
 }

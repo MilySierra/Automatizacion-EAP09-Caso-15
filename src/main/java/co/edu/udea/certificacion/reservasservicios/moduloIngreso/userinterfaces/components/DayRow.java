@@ -15,6 +15,10 @@ public class DayRow {
     }
 
     public WebElementFacade activationSlider() {
+        return row.thenFind("./div[2]/label/span");
+    }
+
+    public WebElementFacade activationSliderCheck() {
         return row.thenFind("./div[2]/label/input");
     }
 

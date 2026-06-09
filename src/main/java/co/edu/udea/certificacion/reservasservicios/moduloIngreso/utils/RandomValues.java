@@ -9,6 +9,7 @@ public class RandomValues {
     public static final List<String> RANDOM_LAST_NAMES =  new ArrayList<>(Arrays.asList("Gomez", "Lopez", "Alvarez", "Perez", "Jimenez", "Castillo"));
     public static final List<String> CUSTOMER_RANDOM_DOMAINS = new ArrayList<>(Arrays.asList("udea.edu.co", "gmail.com", "hotmail.com", "entity.com"));
     public static final List<String> PROVIDER_RANDOM_DOMAINS = new ArrayList<>(Arrays.asList("gmail.com", "barbers.co", "avogados-sas.com", "tintoreros.com", "haircuts.com"));
+    public static final List<String> RANDOM_SERVICES = new ArrayList<>(Arrays.asList("Corte cabello hombre", "Masaje capilar", "Corte cabello dama", "Manicure semipermante"));
 
     public static <T> T randomItem(List<T> list) {
 
@@ -18,12 +19,20 @@ public class RandomValues {
         );
     }
 
+    public static int randomIntegerBetween(int lowerBound, int upperBound){
+        return ThreadLocalRandom.current().nextInt(lowerBound, upperBound + 1);
+    }
+
     public static String randomName(){
 
         if (Math.random() < 0.5){
             return randomItem(RANDOM_MALE_NAMES);
         }
         return randomItem(RANDOM_FEMALE_NAMES);
+    }
+
+    public static String randomServiceName(){
+        return randomItem(RANDOM_SERVICES);
     }
 
     public static String randomLastName(){

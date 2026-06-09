@@ -10,4 +10,9 @@ public class DashboardPage extends PageObject{
     public static final Target BUSINESS_HOURS_BUTTON = Target.the(
         "Business hours definition button")
         .located(By.xpath("//*[@id=\"root\"]/div/aside/nav/button[2]"));
+
+    public static final Target SERVICE_AVAILABILITY_BUTTON = Target.the(
+        "set up of service availability time slots button")
+        .locatedBy("//*[@id=\"root\"]/div/aside/nav/button[3]");
+        
 }
