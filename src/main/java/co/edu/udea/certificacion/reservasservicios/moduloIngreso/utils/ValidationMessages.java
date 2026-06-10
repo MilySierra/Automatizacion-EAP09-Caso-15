@@ -15,4 +15,13 @@ public class ValidationMessages {
 
     public static final String AT_SIGN_MISSING_ENGLISH = "Please include an '@' in the email address";
 
+    // HU-10: Service activation/deactivation
+    public static final String SERVICE_STATUS_UPDATED = "Estado del servicio actualizado correctamente.";
+
+    // HU-17: Booking cancellation
+    public static final String BOOKING_CANCELLED = "Reserva cancelada correctamente.";
+
+    // HU-19: My bookings empty state
+    public static final String NO_BOOKINGS = "Aún no has hecho ninguna reserva.";
+
 }
