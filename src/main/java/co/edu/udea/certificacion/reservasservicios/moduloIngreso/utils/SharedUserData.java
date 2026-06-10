@@ -9,11 +9,12 @@ public class SharedUserData {
 
     @Setter
     @Getter
-    private static User RegisteredCustomer;
+    private static User RegisteredCustomer = UserCreation.registeredCustomer();
     @Setter
     @Getter
-    private static User RegisteredProvider;
+    private static User RegisteredProvider = UserCreation.registeredProvider();
     @Setter
     @Getter
     private static Service RegisteredService;
+
 }

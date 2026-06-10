@@ -11,7 +11,7 @@ public class RegistrationOpenThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.browserOn().thePageNamed("pages.registrationUrl"));
-        Wait.waitSomeMills(5000);
+        Wait.waitAfterEndpoint();
     }
 
     public static RegistrationOpenThe browser(){

@@ -4,11 +4,17 @@ import co.edu.udea.certificacion.reservasservicios.moduloIngreso.models.User;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.LogInIncompleteValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.LogInIncorrectValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.LogInValidation;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.CustomerRegistrationEnterThe;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.LogInEnterThe;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.LogInOpenThe;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.SharedUserData;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.UserCreation;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.ValidationMessages;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.LogOutValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.LogOutEnterThe;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.RegistrationOpenThe;
+
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.containsString;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,6 +33,15 @@ public class LogInStepDefinition {
     }
 
     User userData = new User();
+
+    @Given("that I am a registered customer on the log-in page")
+    public void iAmAReisteredCustomerOnTheLogInPage(){
+        user().attemptsTo(RegistrationOpenThe.browser());
+        User userData = UserCreation.randomUserWithValidPassword();
+        SharedUserData.setRegisteredCustomer(userData);
+        user().attemptsTo(CustomerRegistrationEnterThe.information(userData));
+        user().attemptsTo(LogInOpenThe.browser());
+    }
 
     @Given("that I am on the log-in page")
     public void thatIAmOnTheLogInPage() {
@@ -69,7 +84,11 @@ public class LogInStepDefinition {
 
     @Then("I can see a message indicating that the password is required")
     public void iCanSeeAMessageIndicatingThatThePasswordIsRequired() {
-        GivenWhenThen.then(user()).should(seeThat(LogInIncompleteValidation.successful(), equalTo("Completa este campo")));
+        GivenWhenThen.then(user()).should(seeThat(LogInIncompleteValidation.successful(), 
+        anyOf(
+            equalTo(ValidationMessages.EMPTY_FIELD_SPANISH),
+            equalTo(ValidationMessages.EMPTY_FIELD_ENGLISH)
+        )));
     }
 
     @Given("that I am on the home page")
@@ -84,7 +103,8 @@ public class LogInStepDefinition {
     @Then("I can see the login page after logout")
     public void iCanSeeTheLoginPageAfterLogout() {
         GivenWhenThen.then(user()).should(
-            seeThat(LogOutValidation.successful(), containsString("Bienvenido"))
+            seeThat(LogOutValidation.successful(), 
+            containsString(ValidationMessages.LOGIN_TITLE))
         );
     }
 }

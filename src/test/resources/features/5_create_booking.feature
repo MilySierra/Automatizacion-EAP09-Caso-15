@@ -1,3 +1,4 @@
+@requiresProviderWithSomeService
 Feature: as a customer I want to create a booking for an available service with a selected provider to access the service according to my schedule
 
   @requiresLoginCustomer

@@ -1,6 +1,5 @@
 package co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks;
 
-import co.edu.udea.certificacion.reservasservicios.moduloIngreso.interactions.LogInEnter;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.interactions.ServiceRegistrationOpen;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.Wait;
 import net.serenitybdd.screenplay.Actor;
@@ -16,7 +15,7 @@ public class ServiceRegistrationOpenThe implements Task {
         actor.attemptsTo(Open.browserOn().thePageNamed("pages.serviceRegistrationUrl"));
         Wait.waitSomeMills(2000);
         actor.attemptsTo(ServiceRegistrationOpen.browser());
-        Wait.waitSomeMills(5000);
+        Wait.waitAfterEndpoint();
     }
 
     public static ServiceRegistrationOpenThe browser(){

@@ -18,7 +18,7 @@ public class ServiceRegistrationEnterThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(ServiceRegistrationEnter.information(service));
-        Wait.waitSomeMills(5000);
+        Wait.waitAfterEndpoint();
     }
 
     public static ServiceRegistrationEnterThe information(Service service){

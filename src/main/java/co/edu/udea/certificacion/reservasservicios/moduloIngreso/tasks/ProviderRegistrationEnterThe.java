@@ -18,7 +18,7 @@ public class ProviderRegistrationEnterThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(ProviderRegistrationEnter.information(user));
-        Wait.waitSomeMills(10000);
+        Wait.waitAfterRegister();
     }
     
     public static ProviderRegistrationEnterThe information(User user){

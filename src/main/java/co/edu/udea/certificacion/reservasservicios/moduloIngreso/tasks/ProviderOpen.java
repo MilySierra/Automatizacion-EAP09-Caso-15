@@ -13,7 +13,7 @@ public class ProviderOpen implements Task{
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(SERVICE_AVAILABILITY_BUTTON));
-        Wait.waitSomeMills(3000);
+        Wait.waitAfterEndpoint();
     }
 
     public static ProviderOpen serviceAvailabilityPage(){

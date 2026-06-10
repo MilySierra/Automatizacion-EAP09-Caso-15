@@ -26,7 +26,7 @@ public class LoginThe implements Task{
         actor.attemptsTo(ProviderRegistrationEnterThe.information(provider));
         actor.attemptsTo(LogInEnterThe.credentials(provider));
         actor.attemptsTo(Click.on(linkButton));
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
     }
 
     public static LoginThe providerAtBussinesHours(User provider){

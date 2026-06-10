@@ -18,7 +18,7 @@ public class ServiceAvailabilityMapping {
         serviceHours.setEndTime(data.get("endTime"));
 
         LocalDate date = LocalDate.now().plusDays(RandomValues.randomIntegerBetween(7,15));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         String formatedDate= date.format(formatter);
 
         serviceHours.setDate(formatedDate);

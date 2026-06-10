@@ -1,9 +1,9 @@
 package co.edu.udea.certificacion.reservasservicios.moduloIngreso.stepdefinitions;
 
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.BookingSuccessValidation;
-import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.NoSlotsValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.CreateBookingEnterThe;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.interactions.OpenBookingModal;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.CreateDates;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.Wait;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,12 +22,7 @@ public class CreateBookingStepDefinition {
 
     @When("I select an active offer and an available slot")
     public void iSelectAnActiveOfferAndAnAvailableSlot() {
-        java.time.LocalDate nextDate = java.time.LocalDate.now().plusDays(2);
-        while (nextDate.getDayOfWeek() == java.time.DayOfWeek.SATURDAY ||
-            nextDate.getDayOfWeek() == java.time.DayOfWeek.SUNDAY) {
-            nextDate = nextDate.plusDays(1);
-        }
-        String date = nextDate.toString();
+        String date = CreateDates.dateAfterNow(2);
         user().attemptsTo(CreateBookingEnterThe.forDate(date));
     }
 
