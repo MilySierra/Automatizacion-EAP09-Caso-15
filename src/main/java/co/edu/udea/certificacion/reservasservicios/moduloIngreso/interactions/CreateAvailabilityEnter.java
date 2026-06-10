@@ -43,18 +43,18 @@ public class CreateAvailabilityEnter implements Interaction {
 
         WebElement dateInput = BrowseTheWeb.as(actor).find(INPUT_AVAILABILITY_DATE).getElement();
         setReactInputValue(js, dateInput, date);
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
 
         WebElement startInput = BrowseTheWeb.as(actor).find(INPUT_AVAILABILITY_START).getElement();
         setReactInputValue(js, startInput, "09:30");
-        Wait.waitSomeMills(300);
+        Wait.waitBetweenSteps();
 
         WebElement endInput = BrowseTheWeb.as(actor).find(INPUT_AVAILABILITY_END).getElement();
         setReactInputValue(js, endInput, "10:30");
-        Wait.waitSomeMills(300);
+        Wait.waitBetweenSteps();
 
         actor.attemptsTo(Click.on(BUTTON_CREATE_AVAILABILITY));
-        Wait.waitSomeMills(2000);
+        Wait.waitAfterEndpoint();
     }
 
     public static CreateAvailabilityEnter information() {

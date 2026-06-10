@@ -5,6 +5,7 @@ import co.edu.udea.certificacion.reservasservicios.moduloIngreso.interactions.Se
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.models.User;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.models.Service;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.ServiceCreation;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.SharedUserData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -23,7 +24,9 @@ public class RegisterDefault implements Task{
         actor.attemptsTo(LoginThe.providerAtBussinesHours(provider));
         actor.attemptsTo(ProviderSetDefault.businessHours());
 
-        Service service = ServiceCreation.randomService();
+        Service service = ServiceCreation.randomService(provider);
+        SharedUserData.setRegisteredService(service);
+
         actor.attemptsTo(ServiceRegistrationOpen.browser());
         actor.attemptsTo(ServiceRegistrationEnterThe.information(service));
     }

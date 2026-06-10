@@ -1,7 +1,6 @@
 package co.edu.udea.certificacion.reservasservicios.moduloIngreso.userinterfaces;
 
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
 
 public class LogInObjects {
     public static final Target INPUT_EMAIL_LOG_IN = Target.the("Email").locatedBy("//*[@id=\"root\"]/div/div[1]/div/main/form/div[1]/input");

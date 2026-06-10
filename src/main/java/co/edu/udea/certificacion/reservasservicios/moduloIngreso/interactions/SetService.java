@@ -28,7 +28,7 @@ public class SetService implements Interaction {
         Select select = new Select(serviceSelect);
         select.selectByIndex(1);
 
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
 
         actor.attemptsTo(Enter.theValue(serviceHours.getDate())
             .into(DATE_INPUT));  
@@ -36,13 +36,13 @@ public class SetService implements Interaction {
         actor.attemptsTo(Enter.theValue(serviceHours.getStartTime())
             .into(START_TIME_INPUT));
 
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
 
         actor.attemptsTo(Enter.theValue(serviceHours.getEndTime())
             .into(END_TIME_INPUT));
         
         actor.attemptsTo(Click.on(CREATE_SLOT_BUTTON));
-        Wait.waitSomeMills(10000);
+        Wait.waitAfterEndpoint();
     }
 
     public static SetService availability(ServiceAvailability serviceHours){

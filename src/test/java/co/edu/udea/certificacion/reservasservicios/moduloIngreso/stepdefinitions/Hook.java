@@ -1,9 +1,15 @@
 package co.edu.udea.certificacion.reservasservicios.moduloIngreso.stepdefinitions;
 
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.models.ServiceAvailability;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.models.User;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.LogInEnterThe;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.LogInOpenThe;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.LogOutEnterThe;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.ProviderSetService;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.RegisterDefault;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.CreateServiceAvailability;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.SharedUserData;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.UserCreation;
 import io.cucumber.java.Before;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
@@ -33,12 +39,24 @@ public class Hook {
         );
     }
 
-    @Before(value = "@requiresLoginCustomer")
+    @Before(value = "@requiresLoginCustomer", order=2)
     public void logInCustomerBeforeScenario() {
         User customer = SharedUserData.getRegisteredCustomer();
         OnStage.theActorInTheSpotlight().attemptsTo(
                 LogInOpenThe.browser(),
                 LogInEnterThe.credentials(customer)
+        );
+    }
+
+    @Before(value = "@requiresProviderWithSomeService", order=1)
+    public void providerOffersAServiceBeforeScenario() {
+        User provider = UserCreation.randomProvider();
+        ServiceAvailability serviceHours = CreateServiceAvailability.createServiceHours();
+
+        OnStage.theActorInTheSpotlight().attemptsTo(
+            RegisterDefault.provider(provider),
+            ProviderSetService.availability(serviceHours),
+            LogOutEnterThe.session()
         );
     }
 }

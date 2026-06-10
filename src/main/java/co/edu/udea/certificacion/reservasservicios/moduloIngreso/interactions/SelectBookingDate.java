@@ -17,15 +17,12 @@ public class SelectBookingDate implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        java.time.LocalDate localDate = java.time.LocalDate.parse(date);
-        String formattedDate = localDate.format(
-            java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")
-        );
+     
         actor.attemptsTo(
             Click.on(INPUT_DATE),
-            SendKeys.of(formattedDate).into(INPUT_DATE)
+            SendKeys.of(date).into(INPUT_DATE)
         );
-        Wait.waitSomeMills(5000);
+        Wait.waitAfterEndpoint();
     }
 
     public static SelectBookingDate withDate(String date) {

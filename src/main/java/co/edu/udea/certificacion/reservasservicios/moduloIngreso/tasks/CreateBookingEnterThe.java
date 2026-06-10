@@ -19,7 +19,7 @@ public class CreateBookingEnterThe implements Task {
         actor.attemptsTo(OpenBookingModal.forFirstOffer());
         Wait.waitSomeMills(2000);
         actor.attemptsTo(SelectBookingDate.withDate(date));
-        Wait.waitSomeMills(8000);  // ← aumenta a 8000
+        Wait.waitSomeMills(8000);  
         actor.attemptsTo(ConfirmBookingSlot.available());
         Wait.waitSomeMills(3000);
     }

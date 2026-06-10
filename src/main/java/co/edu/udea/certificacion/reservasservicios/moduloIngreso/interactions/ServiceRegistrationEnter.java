@@ -22,11 +22,11 @@ public class ServiceRegistrationEnter implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Enter.theValue(service.getName()).into(INPUT_SERVICE_NAME));
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Enter.theValue(service.getDescription()).into(INPUT_SERVICE_DESCRIPTION));
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Enter.theValue(DEFAULT_DURATION).into(DURATION_INPUT));
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(BUTTON_SAVE));
     }
 

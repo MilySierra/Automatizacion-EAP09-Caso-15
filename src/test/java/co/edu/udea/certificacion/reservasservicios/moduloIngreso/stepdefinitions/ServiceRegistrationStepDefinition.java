@@ -15,7 +15,10 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.SharedUserData;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.ValidationMessages;
+
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.equalTo;
 
 public class ServiceRegistrationStepDefinition {
@@ -54,7 +57,11 @@ public class ServiceRegistrationStepDefinition {
 
     @Then("I can see a message indicating that the description is required")
     public void iCanSeeAMessageIndicatingThatTheDescriptionIsRequired() {
-        GivenWhenThen.then(user()).should(seeThat(ServiceRegistrationIncompleteValidation.successful(), equalTo("Completa este campo")));
+        GivenWhenThen.then(user()).should(seeThat(ServiceRegistrationIncompleteValidation.successful(),
+            anyOf(
+                equalTo(ValidationMessages.EMPTY_FIELD_SPANISH),
+                equalTo(ValidationMessages.EMPTY_FIELD_ENGLISH)
+            )));
     }
 
     @When("I create an availability slot for the registered service")

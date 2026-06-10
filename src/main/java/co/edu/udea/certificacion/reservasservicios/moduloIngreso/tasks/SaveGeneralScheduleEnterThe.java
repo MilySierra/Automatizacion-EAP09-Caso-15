@@ -11,7 +11,7 @@ public class SaveGeneralScheduleEnterThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(SaveGeneralScheduleEnter.defaultSchedule());
-        Wait.waitSomeMills(3000);
+        Wait.waitAfterEndpoint();
     }
 
     public static SaveGeneralScheduleEnterThe information() {

@@ -30,7 +30,7 @@ public class ProviderSet implements Interaction{
             slider.click();
         }
 
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
         WebElementFacade openingTimeInput = row.openingTimeInput();
         WebElementFacade closingTimeInput = row.closingTimeInput();
         WebElementFacade button = row.saveButton();
@@ -38,13 +38,13 @@ public class ProviderSet implements Interaction{
         openingTimeInput.clear();
         openingTimeInput.type(businessHours.getOpeningTime());
         
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
         closingTimeInput.clear();
         closingTimeInput.type(businessHours.getClosingTime());
 
-        Wait.waitSomeMills(500);
+        Wait.waitBetweenSteps();
         button.click();
-        Wait.waitSomeMills(1000);
+        Wait.waitAfterEndpoint();
     }
 
     public static ProviderSet theBusinessHours(BusinessHours businessHours){

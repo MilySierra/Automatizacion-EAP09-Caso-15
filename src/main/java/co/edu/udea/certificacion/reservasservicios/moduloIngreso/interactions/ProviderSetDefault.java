@@ -21,7 +21,7 @@ public class ProviderSetDefault implements Interaction{
 
         for (int i=1; i<7; i++){
             mondayToFridayHours.setDayOfWeek(i);
-            Wait.waitSomeMills(500);
+            Wait.waitBetweenSteps();
             actor.attemptsTo(ProviderSet.theBusinessHours(mondayToFridayHours));
         }
 

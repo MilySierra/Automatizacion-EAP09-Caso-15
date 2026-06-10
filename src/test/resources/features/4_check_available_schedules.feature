@@ -1,3 +1,4 @@
+@requiresProviderWithSomeService
 Feature: as a customer I want to consult available schedules and slots for a service to decide if I can make a reservation
 
   @requiresLoginCustomer

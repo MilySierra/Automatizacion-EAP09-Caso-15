@@ -3,6 +3,7 @@ package co.edu.udea.certificacion.reservasservicios.moduloIngreso.stepdefinition
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.AvailableSlotsValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.questions.NoSlotsValidation;
 import co.edu.udea.certificacion.reservasservicios.moduloIngreso.tasks.ConsultAvailabilityEnterThe;
+import co.edu.udea.certificacion.reservasservicios.moduloIngreso.utils.CreateDates;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,12 +27,7 @@ public class CheckAvailableScheduleStepDefinition {
 
     @When("I select a valid offer and a valid date")
     public void iSelectAValidOfferAndAValidDate() {
-        java.time.LocalDate nextDate = java.time.LocalDate.now().plusDays(2);
-        while (nextDate.getDayOfWeek() == java.time.DayOfWeek.SATURDAY ||
-            nextDate.getDayOfWeek() == java.time.DayOfWeek.SUNDAY) {
-            nextDate = nextDate.plusDays(1);
-        }
-        String date = nextDate.toString();
+        String date = CreateDates.dateAfterNow(2);
         user().attemptsTo(ConsultAvailabilityEnterThe.forDate(date));
     }
 
@@ -44,7 +40,8 @@ public class CheckAvailableScheduleStepDefinition {
 
     @When("I select a valid offer and a date with no slots")
     public void iSelectAValidOfferAndADateWithNoSlots() {
-        user().attemptsTo(ConsultAvailabilityEnterThe.forDate("2020-06-15"));
+        String date = CreateDates.dateAfterNow(5);
+        user().attemptsTo(ConsultAvailabilityEnterThe.forDate(date));
     }
 
     @Then("I can see a message indicating that there are no slots available")

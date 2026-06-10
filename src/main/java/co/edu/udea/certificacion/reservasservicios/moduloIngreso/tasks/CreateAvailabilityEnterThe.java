@@ -10,9 +10,9 @@ public class CreateAvailabilityEnterThe implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        Wait.waitSomeMills(3000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(CreateAvailabilityEnter.information());
-        Wait.waitSomeMills(3000);
+        Wait.waitBetweenSteps();
     }
 
     public static CreateAvailabilityEnterThe information() {

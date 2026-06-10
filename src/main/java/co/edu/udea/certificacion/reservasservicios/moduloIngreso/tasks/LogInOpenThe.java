@@ -11,7 +11,7 @@ public class LogInOpenThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.browserOn().thePageNamed("pages.logInUrl"));
-        Wait.waitSomeMills(5000);
+        Wait.waitAfterEndpoint();
     }
 
     public static LogInOpenThe browser(){

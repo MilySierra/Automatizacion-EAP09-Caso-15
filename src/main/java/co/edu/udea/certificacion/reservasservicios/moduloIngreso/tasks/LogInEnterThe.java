@@ -18,7 +18,7 @@ public class LogInEnterThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(LogInEnter.credentials(user));
-        Wait.waitSomeMills(10000);
+        Wait.waitAfterEndpoint();
     }
 
     public static LogInEnterThe credentials(User user){

@@ -2,6 +2,9 @@ buildscript {
     repositories {
         mavenCentral()
     }
+    dependencies{
+        classpath("net.serenity-bdd:serenity-gradle-plugin:3.3.4")
+    }
 }
 
 plugins {
@@ -52,7 +55,7 @@ dependencies {
 
     //Additional library
     implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.12.0'
-
+    apply plugin: 'net.serenity-bdd.serenity-gradle-plugin'
 }
 
 tasks.named('test') {

@@ -15,19 +15,19 @@ public class SaveGeneralScheduleEnter implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BUTTON_HORARIOS_ATENCION));
-        Wait.waitSomeMills(2000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(Target.the("Save LUNES").locatedBy("(//button[contains(@class,'btn-save-row')])[1]")));
-        Wait.waitSomeMills(1000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(Target.the("Save MARTES").locatedBy("(//button[contains(@class,'btn-save-row')])[2]")));
-        Wait.waitSomeMills(1000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(Target.the("Save MIERCOLES").locatedBy("(//button[contains(@class,'btn-save-row')])[3]")));
-        Wait.waitSomeMills(1000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(Target.the("Save JUEVES").locatedBy("(//button[contains(@class,'btn-save-row')])[4]")));
-        Wait.waitSomeMills(1000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(Target.the("Save VIERNES").locatedBy("(//button[contains(@class,'btn-save-row')])[5]")));
-        Wait.waitSomeMills(1000);
+        Wait.waitBetweenSteps();
         actor.attemptsTo(Click.on(Target.the("Save SABADO").locatedBy("(//button[contains(@class,'btn-save-row')])[6]")));
-        Wait.waitSomeMills(1000);
+        Wait.waitBetweenSteps();
     }
 
     public static SaveGeneralScheduleEnter defaultSchedule() {

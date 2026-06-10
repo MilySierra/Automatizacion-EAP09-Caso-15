@@ -1,7 +1,7 @@
 Feature: as a user, I want to log in with my credentials to access the features available to my profile
 
   Scenario: log in successful
-    Given that I am on the log-in page
+    Given that I am a registered customer on the log-in page
     When I enter my credentials
     Then I can see the home page
 
@@ -15,7 +15,7 @@ Feature: as a user, I want to log in with my credentials to access the features 
     |"ocampo@udea.edu.co"|
 
   Scenario: log in with password empty
-    Given that I am on the log-in page
+    Given that I am a registered customer on the log-in page
     When I enter my credentials but leave the password empty
     Then I can see a message indicating that the password is required
 

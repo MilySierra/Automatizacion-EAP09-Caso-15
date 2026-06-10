@@ -1,7 +1,6 @@
 package co.edu.udea.certificacion.reservasservicios.moduloIngreso.userinterfaces;
 
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
 
 public class ServiceRegistrationObjects {
     public static final Target BUTTON_SERVICE = Target.the("Service button").locatedBy("//*[@id=\"root\"]/div/aside/nav/button[3]/span");
