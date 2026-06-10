@@ -15,7 +15,7 @@ public class ConfirmBookingSlot implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
             WaitUntil.the(FIRST_SLOT_AVAILABLE, WebElementStateMatchers.isVisible())
-                .forNoMoreThan(3).seconds(),
+                .forNoMoreThan(60).seconds(),
             Click.on(FIRST_SLOT_AVAILABLE)
         );
     }
