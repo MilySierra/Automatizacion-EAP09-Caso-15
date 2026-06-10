@@ -17,7 +17,7 @@ public class SelectBookingDate implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-     
+
         actor.attemptsTo(
             Click.on(INPUT_DATE),
             SendKeys.of(date).into(INPUT_DATE)
